@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ContentEditableTest from './components/content-editable-test.vue'
 import DbTest from './components/db-test.vue'
-import Home from './components/home.vue'
-import WwTest from './components/ww-test.vue'
 import GeolocationTest from './components/geolocation-test.vue'
+import Home from './components/home.vue'
+import MessageWindow from './components/message-window.vue'
+import PostMessageTest from './components/post-message-test.vue'
+import WwTest from './components/ww-test.vue'
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -11,7 +13,9 @@ const routes = [
   { path: '/db-test', component: DbTest },
   { path: '/ww-test', component: WwTest },
   { path: '/content-editable-test', component: ContentEditableTest },
-  { path: '/geolocation-test', component: GeolocationTest }
+  { path: '/geolocation-test', component: GeolocationTest },
+  { path: '/post-message-test', component: PostMessageTest },
+  { path: '/message-window', component: MessageWindow }
 ]
 
 const router = createRouter({
