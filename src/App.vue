@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import DbTest from './components/dbTest.vue'
 </script>
 
 <template>
-  <db-test/>
+  <router-view/>
 </template>
 
 <style scoped>
