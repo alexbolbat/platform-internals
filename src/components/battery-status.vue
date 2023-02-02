@@ -2,12 +2,15 @@
   <div v-if="containsBattery">
     <div>Battery status:</div>
     <div v-if="batteryLevel != null">Battery level: {{ batteryLevel * 100 }}%</div>
-    <div v-if="secondsToDischarge != null">To discharge charge: {{ secondsToDischarge }} seconds</div>
-    <div v-if="secondsToFullCharge != null">To full charge: {{ secondsToFullCharge }} seconds</div>
+    <div v-if="secondsToDischarge != null && Number.isFinite(secondsToDischarge)">
+      To discharge charge: {{ secondsToDischarge }} seconds
+    </div>
+    <div v-if="secondsToFullCharge != null && Number.isFinite(secondsToFullCharge)">
+      To full charge: {{ secondsToFullCharge }} seconds
+    </div>
     <div v-if="isCharging != null">Currently the device is{{ isCharging ? '' : ' not' }} charging</div>
   </div>
   <div v-else>no battery data</div>
-  <div v-if="error">ERROR {{ error }}</div>
 </template>
 
 <script lang="ts" setup>
@@ -33,8 +36,6 @@ const batteryLevel = ref<number>()
 const secondsToDischarge = ref<number>()
 const secondsToFullCharge = ref<number>()
 const isCharging = ref<boolean>()
-
-const error = ref()
 
 function onChargingChange () {
   isCharging.value = battery?.charging
@@ -68,8 +69,6 @@ if (batteryNavigator.getBattery) {
     battery.addEventListener("levelchange", onBatteryLevelChange)
     battery.addEventListener("chargingtimechange", onChargingTimeChange)
     battery.addEventListener("dischargingtimechange", onDischargingTimeChange)
-  }).catch(err => {
-    error.value = err
   })
 }
 
