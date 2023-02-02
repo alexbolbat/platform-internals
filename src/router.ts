@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import BatteryStatus from './components/battery-status.vue'
 import ContentEditableTest from './components/content-editable-test.vue'
 import DbTest from './components/db-test.vue'
@@ -8,6 +8,7 @@ import MessageWindow from './components/message-window.vue'
 import PostMessageTest from './components/post-message-test.vue'
 import VibrateTest from './components/vibrate-test.vue'
 import WwTest from './components/ww-test.vue'
+import PageVisibilityTest from './components/page-visibility-test.vue'
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -19,11 +20,12 @@ const routes = [
   { path: '/post-message-test', component: PostMessageTest },
   { path: '/message-window', component: MessageWindow },
   { path: '/vibrate-test', component: VibrateTest },
-  { path: '/battery-status', component: BatteryStatus }
+  { path: '/battery-status', component: BatteryStatus },
+  { path: '/page-visibility-test', component: PageVisibilityTest },
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 })
 
