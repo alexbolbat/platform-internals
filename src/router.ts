@@ -5,6 +5,7 @@ import GeolocationTest from './components/geolocation-test.vue'
 import Home from './components/home.vue'
 import MessageWindow from './components/message-window.vue'
 import PostMessageTest from './components/post-message-test.vue'
+import VibrateTest from './components/vibrate-test.vue'
 import WwTest from './components/ww-test.vue'
 
 const routes = [
@@ -15,7 +16,8 @@ const routes = [
   { path: '/content-editable-test', component: ContentEditableTest },
   { path: '/geolocation-test', component: GeolocationTest },
   { path: '/post-message-test', component: PostMessageTest },
-  { path: '/message-window', component: MessageWindow }
+  { path: '/message-window', component: MessageWindow },
+  { path: '/vibrate-test', component: VibrateTest }
 ]
 
 const router = createRouter({
