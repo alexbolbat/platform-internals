@@ -23,7 +23,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, onUnmounted, ref } from 'vue'
+import { computed, onUnmounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 interface HistoryState {
   back: string | null
@@ -33,6 +34,11 @@ interface HistoryState {
   replaced: boolean
   scroll: { x: number; y: number } | null
 }
+
+const route = useRoute()
+watch(() => route.path, () => {
+  historyState.value = window.history.state
+})
 
 const historyState = ref<HistoryState>(window.history.state)
 const gotoIndex = ref(0)
