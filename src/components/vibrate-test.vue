@@ -8,7 +8,7 @@
     >
   </div>
   <button
-    @click="playInputText"
+    @mousedown="playInputText"
   >Vibrate as Morse code</button>
   <h1>{{ timingsOutput }}</h1>
 </template>
@@ -30,7 +30,7 @@ function playInputText () {
         code[code.length - 1] = dit * 7
       }
 
-      const symbol = key as keyof typeof morseCode
+      const symbol = key.toLowerCase() as keyof typeof morseCode
       if (!morseCode[symbol]) {
         return code
       }
