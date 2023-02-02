@@ -23,6 +23,8 @@
 </template>
 
 <script lang="ts" setup>
+import { computed, onUnmounted, ref } from 'vue'
+
 interface HistoryState {
   back: string | null
   current: string | null
@@ -31,8 +33,6 @@ interface HistoryState {
   replaced: boolean
   scroll: { x: number; y: number } | null
 }
-
-import { computed, onUnmounted, ref } from 'vue'
 
 const historyState = ref<HistoryState>(window.history.state)
 const gotoIndex = ref(0)
