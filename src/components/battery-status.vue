@@ -1,5 +1,5 @@
 <template>
-  <div v-if="battery">
+  <div v-if="containsBattery">
     <div>Battery status:</div>
     <div v-if="batteryLevel != null">Battery level: {{ batteryLevel * 100 }}%</div>
     <div v-if="secondsToDischarge != null">To discharge charge: {{ secondsToDischarge }} seconds</div>
@@ -28,6 +28,7 @@ interface BatteryNavigator extends Navigator {
 
 let battery: BatteryManager | undefined
 
+const containsBattery = ref(false)
 const batteryLevel = ref<number>()
 const secondsToDischarge = ref<number>()
 const secondsToFullCharge = ref<number>()
@@ -55,6 +56,7 @@ const batteryNavigator = navigator as BatteryNavigator
 
 if (batteryNavigator.getBattery) {
   batteryNavigator.getBattery().then(batteryManager => {
+    containsBattery.value = true
     battery = batteryManager
 
     onChargingChange()
