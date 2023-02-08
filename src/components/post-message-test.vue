@@ -31,7 +31,9 @@ const receivedText = ref<string[]>([])
 
 function openWindow () {
   popup = window.open(
-    '/message-window', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes')
+    '/#/message-window',
+    '_blank',
+    'location=yes,height=570,width=520,scrollbars=yes,status=yes')
   if (popup) {
     popup.onload = onPopupLoad
   }

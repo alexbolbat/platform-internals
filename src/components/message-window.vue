@@ -24,7 +24,6 @@ const textToSend = ref('')
 function onMessage (event: MessageEvent) {
   const data = event.data as Message
   if (data.type === 'init') {
-    console.log('init',event.source )
     source = event.source
   } else if (data.type === 'text' && data.text) {
     receivedText.value.push(data.text)

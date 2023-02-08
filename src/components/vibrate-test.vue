@@ -1,4 +1,5 @@
 <template>
+  Doesn't work with safari
   <div>
     only latin letters, numbers, spaces please
     <br>
