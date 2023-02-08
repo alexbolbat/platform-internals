@@ -8,6 +8,7 @@
   <div><router-link to="/battery-status">Battery status</router-link></div>
   <div><router-link to="/page-visibility-test">Page visibility test</router-link></div>
   <div><router-link to="/audio-test">Audio test</router-link></div>
+  <div><router-link to="/navigation-timings">Navigation timings</router-link></div>
 </template>
 
 <script lang="ts" setup>

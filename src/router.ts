@@ -10,6 +10,7 @@ import PageVisibilityTest from './components/page-visibility-test.vue'
 import PostMessageTest from './components/post-message-test.vue'
 import VibrateTest from './components/vibrate-test.vue'
 import WwTest from './components/ww-test.vue'
+import NavigationTimings from './components/navigation-timings.vue'
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -23,7 +24,8 @@ const routes = [
   { path: '/vibrate-test', component: VibrateTest },
   { path: '/battery-status', component: BatteryStatus },
   { path: '/page-visibility-test', component: PageVisibilityTest },
-  { path: '/audio-test', component: AudioTest }
+  { path: '/audio-test', component: AudioTest },
+  { path: '/navigation-timings', component: NavigationTimings },
 ]
 
 const router = createRouter({
